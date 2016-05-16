@@ -1,0 +1,7 @@
+-e .
+tox
+pyflakes
+readme_renderer
+isort
+pytest
+sphinx

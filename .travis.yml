@@ -1,0 +1,14 @@
+language: python
+python:
+  - "3.5"
+  - "3.5-dev"
+  - "nightly"
+install:
+  - pip install -r dev-requirements.txt
+script:
+  - pyflakes stringint.py test_stringint.py setup.py docs/conf.py
+  - python setup.py check --restructuredtext --strict
+  - isort --check-only --recursive --diff stringint.py test_stringint.py setup.py docs/conf.py
+  - check-manifest
+  - sphinx-build -W -b html -d docs/_build/doctrees docs docs/_build/html
+  - py.test

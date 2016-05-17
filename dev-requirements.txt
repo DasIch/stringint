@@ -5,3 +5,4 @@ readme_renderer
 isort
 pytest
 sphinx
+check-manifest

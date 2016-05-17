@@ -8,13 +8,17 @@
 import sys
 
 
+BYTES = 256
+CODEPOINTS = sys.maxunicode + 1
+
+
 def bytes_to_int(bytes):
     """
     Takes a byte string and returns an unsigned int.
     """
     result = 1
     for byte in bytes:
-        result = result * 256 + byte
+        result = result * BYTES + byte
     return result
 
 
@@ -25,7 +29,7 @@ def int_to_bytes(int):
     """
     result = bytearray()
     while int > 1:
-        int, byte = divmod(int, 256)
+        int, byte = divmod(int, BYTES)
         result.append(byte)
     return bytes(result[::-1])
 
@@ -36,7 +40,7 @@ def string_to_int(string):
     """
     result = 1
     for codepoint in string:
-        result = result * (sys.maxunicode + 1) + ord(codepoint)
+        result = result * CODEPOINTS + ord(codepoint)
     return result
 
 
@@ -47,6 +51,6 @@ def int_to_string(int):
     """
     result = []
     while int > 1:
-        int, codepoint = divmod(int, sys.maxunicode + 1)
+        int, codepoint = divmod(int, CODEPOINTS)
         result.append(chr(codepoint))
     return ''.join(reversed(result))

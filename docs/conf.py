@@ -117,7 +117,8 @@ html_theme = 'alabaster'
 html_theme_options = {
     'github_user': 'DasIch',
     'github_repo': 'stringint',
-    'github_button': True
+    'github_button': True,
+    'github_banner': True
 }
 
 

@@ -34,7 +34,7 @@ setup(
     classifiers=[
         'License :: OSI Approved :: BSD License',
         'Programming Language :: Python :: 3.5',
-        'Programming Language :: Implementation :: CPython'
+        'Programming Language :: Python :: Implementation :: CPython'
     ],
 
     py_modules=['stringint']
